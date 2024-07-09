@@ -12,4 +12,11 @@ public class JourneyDbContext : DbContext
         // Data Source vai ser diferente dependendo de seu sistema operacional
         optionsBuilder.UseSqlite("Data Source=/home/giovani/github/Journey/JourneyDatabase.db");
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Activity>().ToTable("Activities");
+    }
 }
