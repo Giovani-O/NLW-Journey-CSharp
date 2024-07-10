@@ -33,4 +33,7 @@
     <data name="TRIP_NOT_FOUND" xml:space="preserve">
         <value>Trip not found</value>
     </data>
+    <data name="DATE_NOT_WITHIN_TRAVEL_PERIOD" xml:space="preserve">
+        <value>Date is not within the trip period</value>
+    </data>
 </root>

@@ -10,7 +10,7 @@ public class JourneyDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // Data Source vai ser diferente dependendo de seu sistema operacional
-        optionsBuilder.UseSqlite("Data Source=/home/giovani/github/Journey/JourneyDatabase.db");
+        optionsBuilder.UseSqlite("Data Source=../../JourneyDatabase.db");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
