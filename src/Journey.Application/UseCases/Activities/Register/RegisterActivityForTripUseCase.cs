@@ -15,10 +15,8 @@ public class RegisterActivityForTripUseCase
     public ResponseActivityJson Execute(Guid tripId, RequestRegisterActivityJson request)
     {
         var dbContext = new JourneyDbContext();
-
         var trip = dbContext
             .Trips
-            .Include(trip => trip.Activities)
             .FirstOrDefault(trip => trip.Id == tripId);
         
         Validate(trip, request);
@@ -30,8 +28,7 @@ public class RegisterActivityForTripUseCase
             TripId = tripId
         };
         
-        trip!.Activities.Add(entity);
-        dbContext.Trips.Update(trip);
+        dbContext.Activities.Add(entity);
         dbContext.SaveChanges();
         
         return new ResponseActivityJson
